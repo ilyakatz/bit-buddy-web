@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'simple_form'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -50,3 +53,9 @@ gem 'devise'
 # gem 'capistrano', group: :development
 
 gem 'rails-rename'
+
+group :development, :test do
+  gem 'pry-byebug'
+ gem "pry-remote"
+ gem "pry-rails"
+end

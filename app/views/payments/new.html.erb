@@ -1,0 +1,5 @@
+About to pay <%= @contact.email %> (<%= @contact.wallet %>)
+
+<%= simple_form_for :payment, url: contact_payments_url do |f|%>
+  <%= f.input :amount, label: "Amount (BTC)" %>
+<% end %>

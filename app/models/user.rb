@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   validates :uid, presence: true
 
+  has_many :contacts
+
   def self.find_for_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
