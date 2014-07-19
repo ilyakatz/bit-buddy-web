@@ -1,4 +1,9 @@
-Paid <%= @contact.email %>
+<% if transaction.success? %>
+  Paid <%= @contact.email %>
+<br/>
 Amount <%= @payment_amount  %>
-
+<br/>
 Balance <%= @coinbase.balance %>
+<% else %>
+  Could not pay to <%= @contact.email %>
+<% end %>

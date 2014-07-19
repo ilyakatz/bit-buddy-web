@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <% if current_user %>
+    <%= link_to "Sign out", destroy_session_url %>
+  <% end %>
+
 <%= yield %>
 
 </body>
