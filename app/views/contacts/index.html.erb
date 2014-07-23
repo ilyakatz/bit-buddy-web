@@ -28,3 +28,38 @@
 <br>
 
 <%= link_to 'New Contact', new_contact_path %>
+
+https://gist.github.com/lupeke/6233678
+
+maybe this one is better
+
+http://www.mycodeland.com/?p=25
+<button onclick="auth();">GET CONTACTS FEED</button>
+<script src="https://apis.google.com/js/client.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+  function auth() {
+    var config = {
+      'client_id': '1028482887168-hkgb59c28t34775g3nfoagp4la7rtunp.apps.googleusercontent.com',
+      'scope': 'https://www.google.com/m8/feeds'
+    };
+    gapi.auth.authorize(config, function() {
+      fetch(gapi.auth.getToken());
+    });
+  }
+
+  function fetch(token) {
+    $.ajax({
+      url: 'https://www.google.com/m8/feeds/contacts/default/full?alt=json',
+      dataType: 'jsonp',
+      data: token
+    }).done(function(data) {
+      var contacts  = data.feed.entry;
+      var i=0;
+      while(contact = contacts[i++]){
+        console.log(contact.title.$t);
+      }
+      //console.log(JSON.stringify(contacts[0].title.$t));
+    });
+  }
+</script>
