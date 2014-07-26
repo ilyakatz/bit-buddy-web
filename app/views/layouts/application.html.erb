@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>OmniauthCoinbaseExample</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>OmniauthCoinbaseExample</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "BitBuddy-web" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <% if current_user %>
-    <%= link_to "Sign out", destroy_session_url %>
-  <% end %>
-  <%= link_to "Requests", new_request_path %>
-  <br/><br/>
+    <% if current_user %>
+      <%= link_to "Sign out", destroy_session_url %>
+    <% end %>
+    <%= link_to "Requests", new_request_path %>
+    <br/><br/>
 
-<%= yield %>
-
-</body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
