@@ -24,6 +24,7 @@ class RequestsController < ApplicationController
 
     json = JSON.parse(response)
     @new_wallet = json["input_address"]
+
     @qr = RQRCode::QRCode.new(@new_wallet)
 
   end
