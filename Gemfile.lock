@@ -1,5 +1,6 @@
-PATH
-  remote: ~/ws/coinbase-ruby
+GIT
+  remote: git://github.com/coinbase/coinbase-ruby.git
+  revision: d5991a36401d53ce1f73fdc89be97ee2fca8365f
   specs:
     coinbase (2.1.0)
       hashie (>= 1.2.0)

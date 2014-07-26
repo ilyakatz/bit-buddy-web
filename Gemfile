@@ -37,7 +37,7 @@ end
 
 gem 'figaro'
 
-gem 'coinbase', '~> 2.0', path: "~/ws/coinbase-ruby"
+gem 'coinbase', '~> 2.0', github: "coinbase/coinbase-ruby"
 gem 'bitstamp'
 gem 'rest-client'
 gem 'rqrcode'
