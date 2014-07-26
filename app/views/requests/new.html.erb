@@ -1,0 +1,36 @@
+
+Current wallet: <%= @wallet %>
+<br/>
+
+<table>
+  <th>Name</th>
+  <th>Balance</th>
+  <th>Id</th>
+  <th>Primary</th>
+  <th>Action</th>
+  <% @accounts.each do |account| %>
+    <tr>
+      <% id = account["id"] %>
+      <% balance = account["balance"].format %>
+      <% name = account["name"] %>
+      <% primary = account["primary"] %>
+      <td>
+        <%= name %>
+      </td>
+      <td>
+        <%= balance %>
+      </td>
+      <td>
+        <%= id %>
+      </td>
+      <td>
+        <% if primary %>
+          yes
+        <% end %>
+      </td>
+      <td>
+        <%= link_to "Request payment", requests_path(id: id), method: :post %>
+      </td>
+    </tr>
+  <% end %>
+</table>

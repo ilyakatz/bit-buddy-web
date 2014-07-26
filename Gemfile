@@ -38,6 +38,9 @@ end
 gem 'figaro'
 
 gem 'coinbase', '~> 2.0', path: "~/ws/coinbase-ruby"
+gem 'bitstamp'
+gem 'rest-client'
+gem 'rqrcode'
 
 gem 'omniauth-coinbase', '~> 1.0'
 

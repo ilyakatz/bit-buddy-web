@@ -4,6 +4,9 @@ BitBuddy::Application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
+  resources :requests
+  resources :blockchain, only: :index
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   devise_scope :user do

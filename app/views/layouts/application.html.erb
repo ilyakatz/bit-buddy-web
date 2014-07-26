@@ -11,6 +11,8 @@
   <% if current_user %>
     <%= link_to "Sign out", destroy_session_url %>
   <% end %>
+  <%= link_to "Requests", new_request_path %>
+  <br/><br/>
 
 <%= yield %>
 
