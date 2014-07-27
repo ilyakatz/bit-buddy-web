@@ -1,35 +1,39 @@
 <style type="text/css">
- table#bitcoin-qr {
-  border-width: 0;
-  border-style: none;
-  border-color: #0000ff;
-  border-collapse: collapse;
- }
- table#bitcoin-qr  td {
-   border-width: 0;
-   border-style: none;
-   border-color: #0000ff;
-   border-collapse: collapse;
-   padding: 0;
-   margin: 0;
-   width: 5px;
-   height: 5px;
- }
- table#bitcoin-qr td.black { background-color: #000; }
- table#bitcoin-qr td.white { background-color: #fff; }
+  table#bitcoin-qr {
+    margin-left: 1em;
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+  }
+  table#bitcoin-qr  td {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    width: 5px;
+    height: 5px;
+  }
+  table#bitcoin-qr td.black { background-color: #000; }
+  table#bitcoin-qr td.white { background-color: #fff; }
 </style>
 
-<table id="bitcoin-qr">
- <% qr.modules.each_index do |x| -%>
-   <tr>
-   <% qr.modules.each_index do |y| -%>
-    <% if qr.dark?(x,y) -%>
-    <td class="black"/>
-    <% else -%>
-    <td class="white"/>
+<div>
+  <table id="bitcoin-qr">
+    <% qr.modules.each_index do |x| -%>
+      <tr>
+        <% qr.modules.each_index do |y| -%>
+          <% if qr.dark?(x,y) -%>
+            <td class="black">
+            </td>
+          <% else -%>
+            <td class="white">
+            </td>
+          <% end -%>
+        <% end -%>
+      </tr>
     <% end -%>
-   <% end -%>
-   </tr>
- <% end -%>
-</table>
-
+  </table>
+</div>
