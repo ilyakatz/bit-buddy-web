@@ -8,11 +8,11 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
 * Problem:
 
-   Bobby used an online auction site to sell a product. Buyer agreed to pay with Bitcoin, so Bobby needs to send his wallet. However, if Bobby sends the buyer his usual wallet, the buyer will be able to see all transaction in the future using the public ledger.
+   Bobby used an online auction site to sell a product. Buyer agreed to pay with Bitcoin, so Bobby needs to send his wallet. However, if Bobby sends the buyer his usual wallet, the buyer will be able to see all transactions in the future using the public ledger.
+
+   **Bobby wants to Bitcoin money into his regular wallet but stay anonymous**
 
 * Solution:
-
-  **Bobby wants to Bitcoin money into his regular wallet but stay anonymous**
 
   With BitBuddy Bobby can generate a new wallet which will redirect all incoming payments to his regular wallet
 
