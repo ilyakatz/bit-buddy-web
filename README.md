@@ -20,7 +20,7 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
 * Problem
 
-   Cope-pasting wallets from one screen to the next is error prone.
+   Copy-pasting wallets from one screen to the next is error prone.
 
    **Jane would rather select a name from her contact book to send Bitcoin to her friends**
 
