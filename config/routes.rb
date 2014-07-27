@@ -4,8 +4,12 @@ BitBuddy::Application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
-  resources :requests
   resources :blockchain, only: :index
+
+  get "coinbase/info"
+  namespace :coinbase do
+    resources :requests
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -15,6 +19,6 @@ BitBuddy::Application.routes.draw do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_session
   end
 
-  root 'coinbase#info'
+  root 'welcome#index'
 
 end

@@ -19,7 +19,6 @@ Choose wallet: <%= @wallet %>
 <table>
   <th>Name</th>
   <th>Balance</th>
-  <th>Id</th>
   <th>Primary</th>
   <th>Action</th>
   <% @accounts.each do |account| %>
@@ -35,15 +34,12 @@ Choose wallet: <%= @wallet %>
         <%= balance %>
       </td>
       <td>
-        <%= id %>
-      </td>
-      <td>
         <% if primary %>
           yes
         <% end %>
       </td>
       <td>
-        <%= link_to "Request payment", requests_path(id: id), method: :post %>
+        <%= link_to "Request payment", coinbase_requests_path(id: id), method: :post %>
       </td>
     </tr>
   <% end %>
