@@ -1,5 +1,7 @@
 module Coinbase
   class RequestsController < ApplicationController
+    before_action :authenticate_user!
+
     def new
       @accounts = coinbase.accounts["accounts"]
     end
