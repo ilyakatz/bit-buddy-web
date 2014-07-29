@@ -10,6 +10,6 @@ class PaymentsController < ApplicationController
     @payment_amount = params[:payment][:amount]
     wallet = @contact.wallet
 
-    @transaction = @coinbase.send_money wallet, @payment_amount, "sending money through api"
+    @transaction = coinbase.send_money wallet, @payment_amount, "sending money through api"
   end
 end
