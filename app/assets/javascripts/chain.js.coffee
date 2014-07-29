@@ -25,7 +25,6 @@ class ChainVerifier
             .addClass("warning")
             .html("This wallet doesn't have any ")
             .append(link)
-          #debugger
           warning.html( warning.html() + ". Are you sure you want to add it?")
           walletInput.after(warning)
           @
