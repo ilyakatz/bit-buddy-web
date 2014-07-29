@@ -63,3 +63,22 @@ http://www.mycodeland.com/?p=25
     });
   }
 </script>
+
+<script>
+  $(function() {
+    var api_key = 'acc0b268c4e36d6bd5d2c0d6ef5ffb20';
+    var addr = '15DnsWaFA2r15Ywe5r7GaN24NiNUxpSkCd';
+    var url = 'https://api.chain.com/v1/bitcoin/addresses/' + addr;
+    $.ajax({
+      url: url,
+      type: 'GET',
+      beforeSend: function (xhr) {
+        console.log  window.btoa(@api_key)
+        xhr.setRequestHeader ('Authorization', 'Basic ' + window.btoa(@api_key));
+      },
+      success: function(data) {
+        console.log(data);
+      }
+    });
+  });
+</script>

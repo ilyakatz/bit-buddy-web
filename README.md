@@ -24,6 +24,14 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
    **Jane would rather select a name from her contact book to send Bitcoin to her friends**
 
+### Trust but verify ( available)
+
+* Problem
+
+   Before adding a trusted contact, the wallet verifies that there is activity associated with the wallet. If the blockchain doesn't return any result, consider sending a test transaction before sending any significant amount
+
+   **When adding a new contact, verify that the wallet is 'active'**
+
 ## Setup
 
 * Register a project in [google console](https://console.developers.google.com/project)
