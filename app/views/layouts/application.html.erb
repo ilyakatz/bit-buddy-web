@@ -10,12 +10,39 @@
   </head>
   <body>
 
-    <div>
-      <% if current_user %>
-        <%= link_to "Sign out", destroy_session_url %>
-      <% end %>
-    </div>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+            <%= link_to "BitBuddy", root_path %>
+          </h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
 
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="">
+            <%= link_to "Contacts", contacts_path %>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Coinbase</a>
+            <ul class="dropdown">
+              <li>
+                <%= link_to "Request Ƀ", new_coinbase_request_path %>
+              </li>
+            </ul>
+          </li>
+          <li class="">
+            <%= link_to "Sign out", destroy_session_path %>
+          </li>
+        </ul>
+
+        <ul class="left">
+        </ul>
+      </section>
+    </nav>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
