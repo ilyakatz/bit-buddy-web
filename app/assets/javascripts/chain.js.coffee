@@ -16,7 +16,7 @@ class ChainVerifier
         walletInput = $("#contact_wallet")
         walletInput.siblings(".warning").remove()
 
-        if data.balance == 0
+        if data.balance == 0 && data.received == 0 && data.sent == 0
           link = $("<a>")
             .attr("href", "https://chain.com/bitcoin/addresses/#{wallet}")
             .html("activity")
