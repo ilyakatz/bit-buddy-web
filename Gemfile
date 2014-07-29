@@ -40,6 +40,7 @@ gem 'coinbase', '~> 2.0', github: "coinbase/coinbase-ruby"
 gem 'bitstamp'
 gem 'rest-client'
 gem 'rqrcode'
+gem 'chain-ruby', require: 'chain'
 gem 'foundation-rails'
 
 gem 'omniauth-coinbase', '~> 1.0'
