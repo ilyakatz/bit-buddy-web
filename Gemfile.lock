@@ -111,6 +111,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     netrc (0.7.7)
+    non-stupid-digest-assets (1.0.4)
     oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -228,6 +229,7 @@ DEPENDENCIES
   foundation-rails
   jbuilder (~> 1.2)
   jquery-rails
+  non-stupid-digest-assets
   omniauth-coinbase (~> 1.0)
   pg
   proxylocal
