@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-//= require turbolinks
 //
+// require ratchet
 //= require bitbuddy
 //= require contacts
 
-$(function(){ $(document).foundation(); });
+$(function(){
+);

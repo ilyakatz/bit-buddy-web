@@ -1,46 +1,47 @@
-<header>
-  <h1>Request payment</h1>
-  <strong>Paranoid Mode</strong>
-  <%= image_tag "paranoid.jpeg", width: "30px" %>
-  <div>A payment request will be made to preserve you privacy:</div>
-  <ul>
-    <li>New Bitcoin wallet will be generated using blockchain.info</li>
-    <li>Requestor will send payment to the new wallet</li>
-    <li>Bitcoin will be trasferred to your Coinbase account</li>
-  </ul>
-</header>
-<div>
+<div class="content-padded">
+  <header>
+    <h1>Request payment</h1>
+    <strong>Paranoid Mode</strong>
+    <%= image_tag "paranoid.jpeg", width: "30px" %>
+    <div>A payment request will be made to preserve you privacy:</div>
+    <ul>
+      <li>New Bitcoin wallet will be generated using blockchain.info</li>
+      <li>Requestor will send payment to the new wallet</li>
+      <li>Bitcoin will be trasferred to your Coinbase account</li>
+    </ul>
+  </header>
+  <div>
+  </div>
 </div>
 
-<br/>
-Choose wallet: <%= @wallet %>
+  <br/>
+  Choose wallet: <%= @wallet %>
 <br/>
 
-<table>
-  <th>Name</th>
-  <th>Balance</th>
-  <th>Primary</th>
-  <th>Action</th>
+<ul class="table-view">
   <% @accounts.each do |account| %>
-    <tr>
-      <% id = account["id"] %>
-      <% balance = account["balance"].format %>
-      <% name = account["name"] %>
-      <% primary = account["primary"] %>
-      <td>
-        <%= name %>
-      </td>
-      <td>
-        <%= balance %>
-      </td>
-      <td>
-        <% if primary %>
-          yes
-        <% end %>
-      </td>
-      <td>
-        <%= link_to "Request payment", coinbase_requests_path(id: id), method: :post %>
-      </td>
-    </tr>
+    <% id = account["id"] %>
+    <% balance = account["balance"].format %>
+    <% name = account["name"] %>
+    <% primary = account["primary"] %>
+
+    <ul class="table-view">
+      <li class="table-view-cell media">
+        <a class="navigate-right">
+          <%= image_tag "bitcoin_icon.png", class:"media-object pull-left"  %>
+          <div class="media-body">
+            <%= name %>
+            <p>
+              <%= balance %>
+              <% if primary %>
+                <span class="badge">primary</span>
+              <% end %>
+            </p>
+          </div>
+          <%= link_to "Request payment", coinbase_requests_path(id: id), method: :post, class:"btn btn-primary" %>
+        </a>
+      </li>
+    </ul>
+
   <% end %>
-</table>
+</ul>

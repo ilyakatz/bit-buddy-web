@@ -1,4 +1,5 @@
 class CoinbaseController < ApplicationController
+      <%= f.input :address, label: "What is your public Bitcoin address"%>
   before_action :authenticate_user!
 
   def info

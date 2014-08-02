@@ -37,7 +37,7 @@ end
 gem 'figaro'
 
 gem 'coinbase', '~> 2.0', github: "coinbase/coinbase-ruby"
-gem 'bitstamp'
+gem 'bitstamp', github: 'kojnapp/bitstamp'
 gem 'rest-client'
 gem 'rqrcode'
 gem 'chain-ruby', require: 'chain'
@@ -62,6 +62,10 @@ group :development, :test do
   gem 'pry-byebug'
  gem "pry-remote"
  gem "pry-rails"
+end
+
+group :development do
+  gem 'proxylocal'
 end
 
 gem 'rails_12factor', group: :production

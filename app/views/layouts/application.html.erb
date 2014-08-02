@@ -10,40 +10,31 @@
   </head>
   <body>
 
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1>
-            <%= link_to "BitBuddy", root_path %>
-          </h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="">
-            <%= link_to "Contacts", contacts_path %>
-          </li>
-          <li class="has-dropdown">
-            <a href="#">Coinbase</a>
-            <ul class="dropdown">
-              <li>
-                <%= link_to "Request Ƀ", new_coinbase_request_path %>
-              </li>
-            </ul>
-          </li>
-          <li class="">
-            <%= link_to "Sign out", destroy_session_path %>
-          </li>
-        </ul>
-
-        <ul class="left">
-        </ul>
-      </section>
+    <nav class="bar bar-tab">
+      <a class="tab-item active" href="<%= root_url %>">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">BitBuddy</span>
+      </a>
+      <a class="tab-item" class="push-right" href="<%= contacts_url %>">
+        <span class="icon icon-list"></span>
+        <span class="tab-label">Contacts</span>
+      </a>
+      <a class="tab-item" href="<%= new_coinbase_request_path %>">
+        <span class="icon icon-share"></span>
+        <span class="tab-label">Request Ƀ</span>
+      </a>
+      <a class="tab-item" href="<%= destroy_session_path %>">
+        <span class="icon icon-trash"></span>
+        <span class="tab-label">Sign out</span>
+      </a>
     </nav>
-    <%= yield %>
+
+    <div class="content">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
+    <script type='text/javascript'>
+
+    </script>
   </body>
 </html>
