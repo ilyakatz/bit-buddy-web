@@ -13,9 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //
-// require ratchet
 //= require bitbuddy
 //= require contacts
-
-$(function(){
-);
+$(function(){ });
