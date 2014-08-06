@@ -39,13 +39,15 @@
         <a class="navigate-right">
           <%= image_tag "bitcoin_icon.png", class:"media-object pull-left"  %>
           <div class="media-body">
-            <%= name %>
+            <div>
+              <%= name %>
+            </div>
             <p>
               <%= balance %>
-              <% if primary %>
-                <span class="badge">primary</span>
-              <% end %>
             </p>
+            <% if primary %>
+              <div class="badge">primary</div>
+            <% end %>
           </div>
           <%= link_to "Request payment", coinbase_requests_path(id: id, anonymous: params[:anonymous]),
             method: :post, class:"btn btn-primary" %>
