@@ -1,18 +1,27 @@
 <div class="content-padded">
+
   <header>
     <h1>Request payment</h1>
-    <strong>Paranoid Mode</strong>
-    <%= image_tag "paranoid.jpeg", width: "30px" %>
-    <div>A payment request will be made to preserve you privacy:</div>
-    <ul>
-      <li>New Bitcoin wallet will be generated using blockchain.info</li>
-      <li>Requestor will send payment to the new wallet</li>
-      <li>Bitcoin will be trasferred to your Coinbase account</li>
-    </ul>
   </header>
-  <div>
-  </div>
-</div>
+
+  <ul class="table-view">
+    <li class="table-view-cell">
+      Anonymous Mode
+      <% if params[:anonymous] %>
+        <%= link_to new_coinbase_request_path do %>
+          <div class="toggle active">
+            <div class="toggle-handle"></div>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to new_coinbase_request_path(anonymous: true) do %>
+          <div class="toggle">
+            <div class="toggle-handle"></div>
+          </div>
+        <% end %>
+      <%end %>
+    </li>
+  </ul>
 
   <br/>
   Choose wallet: <%= @wallet %>
@@ -38,10 +47,13 @@
               <% end %>
             </p>
           </div>
-          <%= link_to "Request payment", coinbase_requests_path(id: id), method: :post, class:"btn btn-primary" %>
+          <%= link_to "Request payment", coinbase_requests_path(id: id, anonymous: params[:anonymous]),
+            method: :post, class:"btn btn-primary" %>
         </a>
       </li>
     </ul>
 
   <% end %>
 </ul>
+</div>
+

@@ -5,6 +5,7 @@ ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 gem 'simple_form'
+gem 'puma'
 
 gem 'pg'
 
@@ -60,13 +61,17 @@ gem 'devise'
 gem 'rails-rename'
 
 group :development, :test do
+  gem "better_errors"
+  gem "binding_of_caller"
   gem 'pry-byebug'
- gem "pry-remote"
- gem "pry-rails"
+  gem "pry-remote"
+  gem "pry-rails"
+  gem 'quiet_assets'
 end
 
 group :development do
   gem 'proxylocal'
+  gem 'foreman'
 end
 
 gem 'rails_12factor', group: :production

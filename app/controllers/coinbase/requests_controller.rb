@@ -14,22 +14,22 @@ module Coinbase
 
       @wallet = coinbase_wallet
       @wallet_name = coinbase_primary_account["name"]
-      @wallet_balance = coinbase_primary_account["balance"]
 
-      response = RestClient.get 'https://blockchain.info/api/receive', {
-        params: {
-          method: "create",
-          address: @wallet,
-          callback: "http://bitbuddy.t.proxylocal.com/blockchain"
-        }
-      }
-      Rails.logger.info response
+      @new_address  = address(@wallet)
 
-      json = JSON.parse(response)
-      @new_wallet = json["input_address"]
+    end
 
-      @qr = RQRCode::QRCode.new(@new_wallet)
+    def callback_url
+      blockchain_index_url(host: BitBuddy::Application.config.host)
+    end
 
+    def address(wallet)
+      if params[:anonymous]
+        new_address = BlockchainAPI.new.new_address(wallet, callback_url)
+        #new_address = "1ExGKUzYYLohb5Qr3xTBrQDa3no2jHXfEL"
+      else
+        wallet
+      end
     end
   end
 end

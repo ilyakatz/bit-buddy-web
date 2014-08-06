@@ -28,4 +28,5 @@ BitBuddy::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.host = "bitbuddy.t.proxylocal.com"
 end

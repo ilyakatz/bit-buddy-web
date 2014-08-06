@@ -1,8 +1,8 @@
-Please ask payment to be sent to: <strong><%= @new_wallet %></strong>.
+Please ask payment to be sent to: <strong><%= @new_address %></strong>.
 
-<%= render "draw_qr", qr: @qr %>
+<%= render "draw_qr", qr: QRDecorator.new(@new_address).decorate  %>
 
 <br/>
 
-Payment will be sent to <strong><%= @wallet_name %>, <%= @wallet_balance.format %>(<%= @wallet %>)</strong>
+Payment will be sent to <strong><%= @wallet_name %></strong>
 

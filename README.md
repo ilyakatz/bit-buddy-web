@@ -34,9 +34,6 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
 ## Setup
 
-* Enable touch events in Chrome
-  * https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc/related
-
 * Register a project in [google console](https://console.developers.google.com/project)
   * https://console.developers.google.com/project/apps~argon-zoo-650/apiui/credential
 
@@ -45,6 +42,10 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
 * Configure API access in gogole console
   * Contacts
+
+* bundle install
+* forman start
+* Point browser to [127.0.0.1:3000](127.0.0.1:3000)
 
 # Docs
 https://developers.google.com/api-client-library/javascript/start/start-js
