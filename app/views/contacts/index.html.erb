@@ -1,7 +1,5 @@
 <div class="content-padded">
 
-  <h1>Listing contacts</h1>
-
   <ul class="table-view">
     <% @contacts.each do |contact| %>
       <li class="table-view-cell">
@@ -17,7 +15,7 @@
     <button class="btn btn-primary btn-block btn-outlined">New Contact</button>
   <% end %>
 
-<button onclick="auth();" class="btn btn-primary btn-block btn-outlined" >Google contacts</button>
+<button style="display:none" onclick="auth();" class="btn btn-primary btn-block btn-outlined" >Google contacts</button>
 </div>
 
 <script src="https://apis.google.com/js/client.js"></script>
