@@ -1,10 +1,12 @@
 # BitBuddy
 
+Full description with image available [here](http://challengepost.com/software/bitbuddy)
+
 ## Goals:
 
 This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
-### Privacy freak ( available )
+### Privacy freak
 
 * Problem:
 
@@ -16,7 +18,7 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
   With BitBuddy Bobby can generate a new wallet which will redirect all incoming payments to his regular wallet
 
-### Fat finger variant ( planned )
+### Fat finger variant
 
 * Problem
 
@@ -24,7 +26,7 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
 
    **Jane would rather select a name from her contact book to send Bitcoin to her friends**
 
-### Trust but verify ( available)
+### Trust but verify
 
 * Problem
 

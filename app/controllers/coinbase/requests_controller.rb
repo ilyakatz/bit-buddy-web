@@ -25,8 +25,7 @@ module Coinbase
 
     def address(wallet)
       if params[:anonymous]
-        #new_address = BlockchainAPI.new.new_address(wallet, callback_url)
-        new_address = "1ExGKUzYYLohb5Qr3xTBrQDa3no2jHXfEL"
+        new_address = BlockchainAPI.new.new_address(wallet, callback_url)
       else
         wallet
       end
