@@ -3,7 +3,14 @@
   <ul class="table-view">
     <% @contacts.each do |contact| %>
       <li class="table-view-cell">
-        <%= link_to contact.email, contact_path(contact) %>
+      </li>
+      <li class="table-view-cell media">
+        <%= link_to  contact_path(contact) do %>
+          <span class="icon icon-person media-object pull-left"></span>
+          <div class="media-body navigate-right">
+            <%= contact.email %>
+          </div>
+        <% end %>
         <%= link_to new_contact_payment_path(contact) do%>
           <button class="btn btn-positive">Pay</button>
         <% end %>
@@ -15,7 +22,7 @@
     <button class="btn btn-primary btn-block btn-outlined">New Contact</button>
   <% end %>
 
-<button style="display:none" onclick="auth();" class="btn btn-primary btn-block btn-outlined" >Google contacts</button>
+  <button style="display:none" onclick="auth();" class="btn btn-primary btn-block btn-outlined" >Google contacts</button>
 </div>
 
 <script src="https://apis.google.com/js/client.js"></script>
