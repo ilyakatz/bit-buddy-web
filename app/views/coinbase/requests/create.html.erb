@@ -1,8 +1,12 @@
-Please ask payment to be sent to: <strong><%= @new_address %></strong>.
+<div class="content-padded">
+  <div class="request-card">
+    Please ask payment to be sent to: <strong class="address"><%= @new_address %></strong>
 
-<%= render "draw_qr", qr: QRDecorator.new(@new_address).decorate  %>
+    <%= render "draw_qr", qr: QRDecorator.new(@new_address).decorate  %>
+  </div>
 
-<br/>
+  <br/>
 
-Payment will be sent to <strong><%= @wallet_name %></strong>
+  Payment will be sent to <strong><%= @wallet_name %></strong>
+</div>
 
