@@ -21,4 +21,12 @@ class ApplicationController < ActionController::Base
   def coinbase_primary_account_name
     coinbase_primary_account["name"]
   end
+
+  rescue_from OAuth2::Error do |exception|
+    if exception.code == "invalid_request"
+      sign_out(:user)
+    end
+    authenticate_user!
+  end
+
 end
