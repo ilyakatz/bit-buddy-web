@@ -1,5 +1,18 @@
-About to pay <%= @contact.email %> (<%= @contact.wallet %>)
-
-<%= simple_form_for :payment, url: contact_payments_url do |f|%>
-  <%= f.input :amount, label: "Amount (BTC)" %>
-<% end %>
+<div class="content-padded">
+  <form class="input-group">
+    <div class="input-row">
+      <label>Email</label>
+      <label><%= @contact.email %></label>
+    </div>
+    <div class="input-row">
+      <label>Address</label>
+      <label><%= @contact.wallet %></label>
+    </div>
+  </form>
+</div>
+<div class="content-padded">
+  <%= simple_form_for :payment, url: contact_payments_url do |f|%>
+    <%= f.input :amount, label: "Amount in Ƀ" %>
+    <%= f.submit "Pay", class: "btn btn-positive btn-block" %>
+  <% end %>
+</div>
