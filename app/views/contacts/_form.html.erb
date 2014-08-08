@@ -11,21 +11,7 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="field small-12 large-4 column">
-      <%= f.input :email %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="field small-12 large-4 column">
-      <%= f.input :wallet %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="actions">
-      <div class="field small-12 large-4 column">
-        <%= f.submit %>
-      </div>
-    </div>
-  </div>
+  <%= f.input :email %>
+  <%= f.input :wallet %>
+  <%= f.submit class: "btn btn-positive btn-block" %>
 <% end %>

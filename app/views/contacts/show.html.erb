@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="content-padded">
+  <form class="input-group">
+    <div class="input-row">
+      <label>Email</label>
+      <label><%= @contact.email %></label>
+    </div>
+    <div class="input-row">
+      <label>Address</label>
+      <label><%= @contact.wallet %></label>
+    </div>
+  </form>
+</div>
+<div class="content-padded">
+  <%= link_to new_contact_payment_path(@contact) do %>
+    <button class="btn btn-positive btn-block">Pay</button>
+  <% end %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+  <%= link_to edit_contact_path(@contact) do %>
+    <button class="btn btn-primary btn-block btn-outlined">Edit</button>
+  <% end %>
 
-<p>
-  <strong>Wallet:</strong>
-  <%= @contact.wallet %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @contact.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+  <%= link_to contact_path(@contact), method: :delete do %>
+    <button class="btn btn-negative btn-block btn-outlined">Remove</button>
+  <% end %>
+</div>
