@@ -5,11 +5,7 @@ BitBuddy::Application.routes.draw do
   end
 
   resources :blockchain, only: :index
-
-  get "coinbase/info"
-  namespace :coinbase do
-    resources :requests
-  end
+  resources :requests
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
