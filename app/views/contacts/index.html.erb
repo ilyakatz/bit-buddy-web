@@ -1,12 +1,12 @@
-<div class="content-padded">
+<div class="content-padded contact-list">
 
   <ul class="table-view">
     <% @contacts.each do |contact| %>
-      <li class="table-view-cell">
-      </li>
       <li class="table-view-cell media">
         <%= link_to  contact_path(contact) do %>
-          <span class="icon icon-person media-object pull-left"></span>
+          <span class="gravatar pull-left">
+            <%= gravatar_image_tag(contact.email, gravatar: { size: 30, secure: true, default: :wavatar }) %>
+          </span>
           <div class="media-body navigate-right">
             <%= contact.email %>
           </div>
@@ -22,53 +22,4 @@
     <button class="btn btn-primary btn-block btn-outlined">New Contact</button>
   <% end %>
 
-  <button style="display:none" onclick="auth();" class="btn btn-primary btn-block btn-outlined" >Google contacts</button>
 </div>
-
-<script src="https://apis.google.com/js/client.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>
-  function auth() {
-    var config = {
-      'client_id': '1028482887168-hkgb59c28t34775g3nfoagp4la7rtunp.apps.googleusercontent.com',
-      'scope': 'https://www.google.com/m8/feeds'
-    };
-    gapi.auth.authorize(config, function() {
-      fetch(gapi.auth.getToken());
-    });
-  }
-
-  function fetch(token) {
-    $.ajax({
-      url: 'https://www.google.com/m8/feeds/contacts/default/full?alt=json',
-      dataType: 'jsonp',
-      data: token
-    }).done(function(data) {
-      var contacts  = data.feed.entry;
-      var i=0;
-      while(contact = contacts[i++]){
-        console.log(contact.title.$t);
-      }
-      //console.log(JSON.stringify(contacts[0].title.$t));
-    });
-  }
-</script>
-
-<script>
-  $(function() {
-    var api_key = 'acc0b268c4e36d6bd5d2c0d6ef5ffb20';
-    var addr = '15DnsWaFA2r15Ywe5r7GaN24NiNUxpSkCd';
-    var url = 'https://api.chain.com/v1/bitcoin/addresses/' + addr;
-    $.ajax({
-      url: url,
-      type: 'GET',
-      beforeSend: function (xhr) {
-        console.log  window.btoa(@api_key)
-        xhr.setRequestHeader ('Authorization', 'Basic ' + window.btoa(@api_key));
-      },
-      success: function(data) {
-        console.log(data);
-      }
-    });
-  });
-</script>

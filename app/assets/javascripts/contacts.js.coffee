@@ -1,4 +1,4 @@
-#= require chain
+#= require _chain
 
 $("#contact_wallet").bind("change input", (e)->
   wallet = $(e.target).val();

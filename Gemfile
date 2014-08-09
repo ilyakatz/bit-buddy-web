@@ -6,6 +6,7 @@ ruby '2.1.0'
 gem 'rails', '4.0.2'
 gem 'simple_form'
 gem 'puma'
+gem 'gravatar_image_tag'
 
 gem 'pg'
 
