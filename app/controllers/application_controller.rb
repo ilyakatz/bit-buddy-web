@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
   rescue_from OAuth2::Error do |exception|
     if exception.code == "invalid_request"
       sign_out(:user)
+      authenticate_user!
     end
-    authenticate_user!
   end
 
 end
