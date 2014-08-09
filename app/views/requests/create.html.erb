@@ -1,6 +1,6 @@
 <div class="content-padded">
   <div class="request-card">
-    Please ask payment to be sent to: <strong class="address"><%= @new_address %></strong>
+    Please ask payment to be sent to new address: <strong class="address"><%= @new_address %></strong>
 
     <%= render "draw_qr", qr: QRDecorator.new(@new_address).decorate  %>
   </div>
