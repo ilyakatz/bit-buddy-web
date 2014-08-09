@@ -46,7 +46,7 @@ This Bitcoin wallet serves to help paranoid users of Coinbase wallets.
   * Contacts
 
 * bundle install
-* forman start
+* PORT=3000 forman start
 * Point browser to [127.0.0.1:3000](127.0.0.1:3000)
 
 # Docs

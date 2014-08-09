@@ -1,0 +1,30 @@
+<div class="content-padded balance">
+
+  <h3>
+    <%= @primary_account%>
+    <span class="badge">primary</span>
+  </h3>
+
+  <ul class="table-view">
+    <% @transactions.each do |t| %>
+      <li class="table-view-cell media">
+        <a class="navigate-right">
+          <div class="media-body">
+            <% if t["amount"] < 0 %>
+              <div class="btn btn-negative btn-block btn-outlined"><%= t["amount"].format %></div>
+            <% else %>
+              <div class="btn btn-positive btn-block btn-outlined"><%= t["amount"].format %></div>
+            <% end %>
+            <p>
+              <% if t["recipient"].try(:[],"name").present? %>
+                <%= t["recipient"].try(:[],"name") %>
+              <% else %>
+                <%= t["recipient_address"]  %>
+              <% end %>
+            </p>
+          </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
