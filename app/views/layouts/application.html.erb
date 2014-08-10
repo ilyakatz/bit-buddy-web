@@ -30,6 +30,11 @@
     </nav>
 
     <div class="content">
+      <% flash.each do |name, msg| %>
+        <div data-alert class="alert-box <%= name == :notice ? "success" : "alert" %>">
+          <span class="badge badge-negative"><%= msg %></span>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
     <%= javascript_include_tag "application" %>

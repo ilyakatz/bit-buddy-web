@@ -11,6 +11,11 @@ class PaymentsController < ApplicationController
     @coinbase = coinbase
     wallet = @contact.wallet
 
+    begin
     @transaction = coinbase.send_money wallet, @payment_amount, "sending money through api"
+    rescue Coinbase::Client::Error => e
+      flash[:alert] = e.message
+      redirect_to action: :new
+    end
   end
 end
