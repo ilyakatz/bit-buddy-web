@@ -12,7 +12,7 @@
 </div>
 <div class="content-padded">
   <%= simple_form_for :payment, url: contact_payments_url do |f|%>
-    <%= f.input :amount, label: "Amount in Ƀ" %>
+    <%= f.input :amount, label: "Amount in Ƀ", as: :float %>
     <%= f.submit "Pay", class: "btn btn-negative btn-block" %>
   <% end %>
 </div>
