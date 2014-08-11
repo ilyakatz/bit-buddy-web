@@ -1,9 +1,35 @@
-<% if @transaction.success? %>
-  Paid <%= @contact.email %>
-<br/>
-Amount <%= @payment_amount  %>
-<br/>
-Balance <%= @coinbase.balance %>
-<% else %>
-  Could not pay to <%= @contact.email %>
-<% end %>
+<div class="content-padded">
+  <div class="alert-box">
+    <span class="badge badge-positive ">
+      <span class="icon icon-check"></span>
+      Payment sent successfully
+    </span>
+  </div>
+
+  <div class="content-padded">
+    <div class="input-group">
+
+      <div class="input-row">
+        <label>Payee</label>
+        <label><%= @contact.email %></label>
+      </div>
+
+      <div class="input-row">
+        <label>Amount</label>
+        <label><%= @payment_amount.format %></label>
+      </div>
+
+      <div class="input-row">
+        <label>Balance</label>
+        <label><%= @wallet_balance.format %></label>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="content-padded">
+  <%= link_to new_contact_payment_path(@contact) do %>
+    <button class="btn btn-negative btn-block btn-outlined">Make another payment</button>
+  <% end %>
+</div>

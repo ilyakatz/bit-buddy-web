@@ -7,8 +7,8 @@ class PaymentsController < ApplicationController
 
   def create
     @contact = current_user.contacts.find(params[:contact_id])
-    @payment_amount = params[:payment][:amount]
-    @coinbase = coinbase
+    @payment_amount = Money.new(params[:payment][:amount].to_f*100000000, "BTC")
+    @wallet_balance = Money.new(coinbase.balance, "BTC")
     wallet = @contact.wallet
 
     begin
