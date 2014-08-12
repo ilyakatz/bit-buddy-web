@@ -3,8 +3,6 @@ class CoinbaseController < ApplicationController
 
   def info
     @balance = coinbase.balance
-
-    current_user.update_credentials!(coinbase.credentials)
   end
 
 end

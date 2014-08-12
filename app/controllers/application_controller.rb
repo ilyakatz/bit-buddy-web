@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
     coinbase = Coinbase::OAuthClient.new(
       Figaro.env.COINBASE_CLIENT_ID,
       Figaro.env.COINBASE_CLIENT_SECRET, current_user.credentials)
+
+    current_user.update_credentials!(coinbase.credentials)
   end
 
   def coinbase_wallet
